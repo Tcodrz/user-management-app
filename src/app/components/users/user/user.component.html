@@ -1,0 +1,42 @@
+<div class="card mt-3" [class]="this.uncompletedTasks ? 'red' : 'green'">
+    <div class="card-body">
+        <div (click)="showInfo()">
+            <span> {{user.id}} </span>
+        </div>
+        <form #userForm="ngForm">
+            <div class="form-group">
+                <label for="name"> Name:
+                    <input type="text" class="form-control" name="name" [(ngModel)]="this.user.name" required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="email"> E-mail:
+                    <input type="text" class="form-control" name="email" [(ngModel)]="this.user.email" required>
+                </label>
+            </div>
+
+            <a class="btn btn-secondary btn-sm" (mouseover)="showAddress = true">OTHER DATA</a>
+
+            <div class="form-group" (click)="this.showAddress = false" *ngIf="this.showAddress">
+                <label for="city"> City:
+                    <input type="text" class="form-control" name="city" [(ngModel)]="this.user.address.city" required>
+                </label>
+            </div>
+            <div class="form-group" (click)="this.showAddress = false" *ngIf="this.showAddress">
+                <label for="street"> Street:
+                    <input type="text" class="form-control" name="street" [(ngModel)]="this.user.address.street"
+                        required>
+                </label>
+            </div>
+            <div class="form-group" (click)="this.showAddress = false" *ngIf="this.showAddress">
+                <label for="zipcode"> Zip:
+                    <input type="text" class="form-control" name="zipcode" [(ngModel)]="this.user.address.zipcode"
+                        required>
+                </label>
+            </div>
+            <button class="btn btn-warning ml-3 btn-sm" [disabled]="userForm.invalid"
+                (click)="onUpdate(userForm)">UPDATE</button>
+            <a class="btn btn-danger btn-sm ml-3" (click)="deleteUser()">DELETE</a>
+        </form>
+    </div>
+</div>

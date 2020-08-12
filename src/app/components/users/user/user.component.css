@@ -1,0 +1,16 @@
+.show {
+  display: inherit;
+}
+.hide {
+  display: none;
+}
+
+.red {
+  border: 2px solid red;
+  box-shadow: 0 0.5rem 1.5rem rgb(255, 0, 0, 0.7);
+}
+
+.green {
+  border: 2px solid green;
+  box-shadow: 0 0.5rem 1.5rem rgb(0, 128, 0, 0.7);
+}

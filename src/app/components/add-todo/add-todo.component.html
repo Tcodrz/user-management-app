@@ -1,0 +1,14 @@
+<div>
+    <form #addTodo="ngForm" (ngSubmit)="handleSubmit(title.value)">
+        <div class="form-group">
+            <label for="title">Title: </label>
+            <input type="text" class="form-control" #title name="title">
+        </div>
+        <button type="button" class="btn btn-danger mr-3" (click)="onCancel()">
+            CANCEL
+        </button>
+        <button class="btn btn-success" type="submit">
+            ADD
+        </button>
+    </form>
+</div>

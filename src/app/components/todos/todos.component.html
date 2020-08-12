@@ -1,0 +1,18 @@
+<div *ngIf="this.todos.length === 0">
+    <h3 class="text-center text-capitalize">
+        press <span [style.color]="'green'"> add </span> to create a new task
+    </h3>
+</div>
+<div *ngIf="this.todos.length >= 1" class="container-fluid">
+
+    <div class="card mb-1 w-25 d-inline-flex flex-column flex-center" *ngFor="let t of todos">
+        <div class="card-body">
+
+            <p>Title: {{ t.title |slice : 0 : 10}}...</p>
+            <p [style.color]="t.completed ? 'green' : 'red'"> {{ t.completed ? 'Completed' : 'Not Completed'}}</p>
+            <button class="btn btn-outline-secondary btn-sm" *ngIf="!t.completed" (click)="markCompleted(t.id)">
+                MARK COMPLETED
+            </button>
+        </div>
+    </div>
+</div>

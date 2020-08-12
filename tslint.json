@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "no-unused-variable": true,
     "align": {
       "options": [
         "parameters",
@@ -63,11 +64,13 @@
       "timeEnd",
       "trace"
     ],
+    "no-string-literal": false,
     "no-empty": false,
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
+    "no-unused-expression": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
@@ -85,6 +88,7 @@
         "always"
       ]
     },
+    "forin": false,
     "space-before-function-paren": {
       "options": {
         "anonymous": "never",
@@ -131,7 +135,7 @@
     },
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
-    "no-input-rename": true,
+    "no-input-rename": false,
     "no-inputs-metadata-property": true,
     "no-output-native": true,
     "no-output-on-prefix": true,
